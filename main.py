@@ -9,30 +9,16 @@ import torch
 import torch.nn as nn
 
 
-from transformers import (AutoTokenizer,
-                          AutoModelForMaskedLM,
-                          AdamW,
-                          AutoModelForSequenceClassification,
-                          DataCollatorForLanguageModeling,
-                          BertForSequenceClassification
+from transformers import (AdamW,
+                          BertForSequenceClassification,
                           )
-from transformers.optimization import get_cosine_schedule_with_warmup, get_linear_schedule_with_warmup
+from transformers.optimization import get_linear_schedule_with_warmup
 
 import numpy as np
 import pandas as pd
-from gluonnlp.data import SentencepieceTokenizer
-from datasets import load_dataset, Dataset
-from sklearn.model_selection import train_test_split
 
 from tqdm import tqdm
-import re
-
-import os
-import random
-import math
 from custom_utils import *
-
-from scipy.stats import spearmanr
 
 seed_everything(42)
 
